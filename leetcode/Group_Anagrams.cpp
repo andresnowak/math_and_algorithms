@@ -56,7 +56,7 @@ vector<vector<string>> groupAnagrams(vector<string> &strs)
     {
         anagram.push_back(x.second);
     }
-    return anagram; // O(m * n) o la otra otra soloucion O((m * log(m)) * n)
+    return anagram; // O(m * n) o la otra otra solucion O((m * log(m)) * n) y espacio O(n)
 }
 
 int main()
