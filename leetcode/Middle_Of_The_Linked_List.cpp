@@ -19,6 +19,7 @@ typedef vector<int> vi;
 typedef vector<long long> vll;
 typedef pair<int, int> pi;
 
+//Definition for singly-linked list.
 struct ListNode
 {
     int val;
@@ -26,7 +27,7 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-ListNode *middleNode(ListNode *head)
+ListNode *middleNode1(ListNode *head)
 {
     ListNode *ans = head; // new ListNode
     ans = head;
@@ -38,20 +39,15 @@ ListNode *middleNode(ListNode *head)
         val++;
     }
 
-    if (val % 2 == 0)
-    {
-        val = val / 2; /*solo lo dividimos entre 2 ya que en el for como 
+    /*solo lo dividimos entre 2 ya que en el for como 
         estamos siempre apuntando al siguiente valor vamos a apuntar al valor
         segundo del medio y no el primero, por decir que tal si mide 6 la mitad 
         es 3 en este caso hay dos mitades 1 2 3 y 4 5 6 pero nosotros queremos
         el segundo bueno despues de 3 iteraciones no vamos a apuntar a 3 si no
         a cuatro por que estamos accediendo siempre al siguiente valor desde el
         primero*/
-    }
-    else
-    {
-        val = ceil(val / 2);
-    }
+
+    val = ceil(val / 2);
 
     ans = head;
 
@@ -61,6 +57,7 @@ ListNode *middleNode(ListNode *head)
     }
 
     return ans;
+    [3 4 5]
 }
 
 //creo que tiene que ver con el hare and turtle algorithm
@@ -88,4 +85,12 @@ ListNode *middleNode(ListNode *head)
 
 int main()
 {
+    ListNode *head = *ListNode;
+
+    for (int i = 1; i <= 6; i++)
+    {
+        head->val = i;
+    }
+
+    cout << head->val << endl;
 }
